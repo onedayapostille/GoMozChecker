@@ -7,6 +7,7 @@ class MozBulkChecker {
     this.clearBtn = document.getElementById('clearBtn');
     this.copyBtn = document.getElementById('copyBtn');
     this.exportBtn = document.getElementById('exportBtn');
+    this.configureApiBtn = document.getElementById('configureApiBtn');
     this.loadingState = document.getElementById('loadingState');
     this.errorState = document.getElementById('errorState');
     this.emptyState = document.getElementById('emptyState');
@@ -36,6 +37,7 @@ class MozBulkChecker {
     this.clearBtn.addEventListener('click', () => this.handleClear());
     this.copyBtn.addEventListener('click', () => this.handleCopy());
     this.exportBtn.addEventListener('click', () => this.handleExport());
+    this.configureApiBtn.addEventListener('click', () => this.openSettings());
 
     this.settingsBtn.addEventListener('click', () => this.openSettings());
     this.closeModal.addEventListener('click', () => this.closeSettings());

@@ -159,6 +159,17 @@ textarea:focus {
     box-shadow: var(--shadow);
 }
 
+.btn-config {
+    background-color: #10b981;
+    color: white;
+}
+
+.btn-config:hover:not(:disabled) {
+    background-color: #059669;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow);
+}
+
 .loading-state,
 .error-state,
 .empty-state {
