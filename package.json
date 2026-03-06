@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "concurrently \"node src/server.js\" \"vite\"",
     "build": "vite build",
     "preview": "vite preview",
     "server": "node src/server.js",
-    "start": "npm run server"
+    "start": "npm run dev"
   },
   "dependencies": {
     "express": "^4.18.2"
