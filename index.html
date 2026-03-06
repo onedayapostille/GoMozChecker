@@ -9,8 +9,18 @@
 <body>
     <div class="container">
         <header>
-            <h1>Moz Bulk URL Checker</h1>
-            <p class="subtitle">Check Domain Authority, Page Authority, and Spam Score for multiple URLs</p>
+            <div class="header-content">
+                <div>
+                    <h1>Moz Bulk URL Checker</h1>
+                    <p class="subtitle">Check Domain Authority, Page Authority, and Spam Score for multiple URLs</p>
+                </div>
+                <button id="settingsBtn" class="btn btn-icon" title="Settings">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path d="M12 1v6m0 6v6m5.656-14.142l-4.242 4.242m-2.828 2.828l-4.242 4.242m16.97-.485l-6-1.732m-6 1.732l-6-1.732m16.97 5.657l-6 1.732m-6-1.732l-6 1.732"></path>
+                    </svg>
+                </button>
+            </div>
         </header>
 
         <main>
@@ -76,8 +86,58 @@
         </main>
 
         <footer>
-            <p>Configure your Moz API credentials in <code>moz-config.json</code></p>
+            <p>Click the settings button to configure your Moz API credentials</p>
         </footer>
+    </div>
+
+    <div id="settingsModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Moz API Settings</h2>
+                <button id="closeModal" class="btn-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="info-box">
+                    <p><strong>Don't have Moz API credentials?</strong></p>
+                    <ol>
+                        <li>Sign up at <a href="https://moz.com/products/api/pricing" target="_blank">Moz API Pricing</a></li>
+                        <li>Get your credentials from <a href="https://moz.com/products/api/keys" target="_blank">API Dashboard</a></li>
+                    </ol>
+                </div>
+
+                <form id="settingsForm">
+                    <div class="form-group">
+                        <label for="accessId">Access ID:</label>
+                        <input
+                            type="text"
+                            id="accessId"
+                            name="accessId"
+                            placeholder="mozscape-1234567890abcdef"
+                            required
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="secretKey">Secret Key:</label>
+                        <input
+                            type="password"
+                            id="secretKey"
+                            name="secretKey"
+                            placeholder="1234567890abcdef1234567890abcdef"
+                            required
+                        />
+                        <button type="button" id="toggleSecret" class="btn-toggle">Show</button>
+                    </div>
+
+                    <div id="settingsStatus" class="settings-status hidden"></div>
+
+                    <div class="modal-footer">
+                        <button type="button" id="cancelBtn" class="btn btn-secondary">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Save Credentials</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 
     <div id="toast" class="toast hidden"></div>
